@@ -13,7 +13,7 @@ namespace HR.LeaveManagement.Application.DTOs.LeaveRequests.Validators
         public CreateLeaveRequestDtoValidators(ILeaveTypeRepository leaveTypeRepository)
         {
             _leaveTypeRepository = leaveTypeRepository;
-            Include(new ILeaveRequestDtoValidators(_leaveTypeRepository));
+            //Include(new ILeaveRequestDtoValidators(_leaveTypeRepository));
         }
     }
 }
