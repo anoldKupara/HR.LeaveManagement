@@ -25,6 +25,7 @@ namespace HR.LeaveManagement.Api
         }
 
         public IConfiguration Configuration { get; }
+        private readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -44,7 +45,7 @@ namespace HR.LeaveManagement.Api
                 o.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                     .AllowAnyMethod()
-                    .AllowCredentials());
+                    .AllowAnyHeader());
             });
         }
 
@@ -64,7 +65,9 @@ namespace HR.LeaveManagement.Api
 
             app.UseAuthorization();
 
-            app.UseCors("CorsPolicy"); 
+            app.UseCors("CorsPolicy");
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {
