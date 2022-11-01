@@ -1,3 +1,4 @@
+using HR.LeaveManagement.MVC.Contracts;
 using HR.LeaveManagement.MVC.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace HR.LeaveManagement.MVC
             ////services.AddScoped<ILeaveRequestService, LeaveRequestService>();
             ////services.AddScoped<ILeaveTypeService, LeaveTypeService>();
 
+            services.AddSingleton<ILocalStorageService, LocalStorageService>();
             services.AddControllersWithViews();
         }
 
