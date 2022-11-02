@@ -25,7 +25,7 @@ namespace HR.LeaveManagement.MVC.Services.Base
             }
             else
             {
-                return new Response<Guid>() { Message = "Something went wrong, Please try again" };
+                return new Response<Guid>() { Message = "Something went wrong, Please try again",  };
             }
         }
 
