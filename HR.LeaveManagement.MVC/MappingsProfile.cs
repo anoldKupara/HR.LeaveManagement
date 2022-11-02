@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using HR.LeaveManagement.MVC.Models;
 using HR.LeaveManagement.MVC.Services;
 
 namespace HR.LeaveManagement.MVC
